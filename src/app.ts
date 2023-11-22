@@ -1,23 +1,14 @@
-import express, { Application, Request, Response } from 'express';
+import express, { Application} from 'express';
 import cors from 'cors';
+import StudentRouter from './App/modules/student/student.route';
 const app: Application = express();
 
 app.use(express.json());
 app.use(cors());
 
-app.get('/all', (req: Request, res: Response) => {
-  try {
-    const a = 10;
+app.use('/api/v1/students', StudentRouter);
+app.use('/api/v1/students', StudentRouter);
 
-    res.status(200).send(a);
-  } catch (err) {
-    res.status(400).send('Some Thing Wrong');
-  }
-});
 
-// app.use((error: any, req: Request, res: Response, next: NextFunction) => {
-//   res.status(400).send(error.message);
-//   next();
-// });
 
 export default app;
