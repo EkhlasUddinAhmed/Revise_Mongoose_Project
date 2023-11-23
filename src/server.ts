@@ -5,7 +5,7 @@ import config from './App/config';
 
 // let server: Server;
 
-async function bootStrap() {
+async function main() {
   mongoose.connect(config.DB_URL as string);
   app.listen(config.PORT, () =>
     console.log(
@@ -14,4 +14,4 @@ async function bootStrap() {
   );
 }
 
-bootStrap();
+main();
